@@ -1,21 +1,15 @@
 var h_move = keyboard_check(ord("D")) -  keyboard_check(ord("A"))
+var grounded = place_meeting(x, y + 1, obj_wall)
 
-x_vel = clamp(x_vel + h_move * x_accel, -x_spd, x_spd)
+x_vel = clamp(x_vel + h_move * x_accel, -max_x_vel, max_x_vel)
 y_vel += grav
 
-for (var _x = 0; _x < abs(x_vel); _x++) {
-	if (place_meeting(x + sign(x_vel), y, obj_wall)) {
-		x_vel = 0
-	} else {
-		x += sign(x_vel)
-	}
+if (grounded and keyboard_check_pressed(ord("W"))) {
+	y_vel = -jump_strength
 }
 
-for (var _y = 0; _y < abs(y_vel); _y++) {
-	if (place_meeting(x, y + sign(y_vel), obj_wall)) {
-		y_vel = 0
-	} else {
-		y += sign(y_vel)
-	}
+if (h_move == 0) {
+	x_vel = approach(x_vel, 0, x_decel)
 }
 
+move_collide()
