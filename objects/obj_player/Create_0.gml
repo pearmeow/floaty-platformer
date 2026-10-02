@@ -16,6 +16,13 @@ coyote_frames = 0
 prev_positions = []
 afterimage_speed = 7
 
+dash = true
+dashing = false
+dash_duration = 15
+dash_timer = 0
+dash_strength = 10
+normalized_dash_strength = sqrt(dash_strength * dash_strength / 2)
+
 function get_vel() {
 	return sqrt(x_vel * x_vel + y_vel * y_vel)
 }
