@@ -14,7 +14,7 @@ max_coyote_frames = 10
 coyote_frames = 0
  
 prev_positions = []
-afterimage_speed = 7
+afterimage_speed = 9
 
 dash = true
 dashing = false
