@@ -1,3 +1,11 @@
+if (y > room_height + 30 or y < -30 or x < -30 or x > room_width + 30) { // out of bounds
+	die()
+}
+
+if (place_meeting(x, y, obj_spike)) {
+	die()
+}
+
 var h_move = keyboard_check(ord("D")) -  keyboard_check(ord("A"))
 var v_move = keyboard_check(ord("S")) -  keyboard_check(ord("W"))
 var grounded = place_meeting(x, y + 1, obj_wall)
@@ -29,19 +37,29 @@ if (dash_timer == dash_duration) {
 	dash_timer = 0
 }
 
+if (not dash) {
+	color = c_white
+} else if (can_dash) {
+	color = c_aqua
+}
+
 if (dashing) {
+	color = c_orange
 	dash_timer += 1
 } else {
 	x_vel = clamp(x_vel + h_move * x_accel, -max_x_vel, max_x_vel)
 	y_vel += grav
+	if (v_move == 1) { // fast falling
+		y_vel += 4 * grav
+	}
 }
 
-if (grounded and (keyboard_check_pressed(ord("W")) or keyboard_check_pressed(vk_space))) {
+if (grounded and keyboard_check_pressed(vk_space)) {
 	y_vel = -jump_strength
 	create_particle(x, y + 8, 5)
 }
 
-if (dash and (keyboard_check_pressed(ord("J")))) {
+if (can_dash and dash and (keyboard_check_pressed(ord("J")))) {
 	// normalize speed
 	var directions = abs(h_move) + abs(v_move)
 	if (directions == 2) {

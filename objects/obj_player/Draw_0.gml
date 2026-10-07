@@ -4,8 +4,13 @@ for (var i = 0; i < array_length(prev_positions); i++) {
 	var prev_x = prev_positions[i][0]
 	var prev_y = prev_positions[i][1]
 	var alpha = 0.9 * (array_length(prev_positions) - i) / array_length(prev_positions)
-	draw_sprite_ext(spr_player, 0, prev_x, prev_y, 1, 1, 0, c_white, alpha)
+	draw_sprite_ext(spr_player, 0, prev_x, prev_y, 1, 1, 0, color, alpha)
 }
 
-
-draw_self()
+if (dash) {
+	draw_sprite_ext(spr_player, 0, x, y, 1, 1, 0, color, 1)
+} else if (dashing) {
+	draw_sprite_ext(spr_player, 0, x, y, 1, 1, 0, color, 1)
+} else {
+	draw_self()
+}

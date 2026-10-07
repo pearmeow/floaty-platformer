@@ -10,7 +10,7 @@ if (!space_pressed) {
 } else {
 	draw_set_alpha(prev_alpha)
 }
-draw_text(x + 10, y - 55, "/Space to Jump")
+draw_text(x + 35, y - 55, "Space to Jump")
 
 if (!a_pressed) {
 	draw_set_alpha(0.5)
@@ -30,10 +30,10 @@ if (!d_pressed) {
 	draw_set_alpha(prev_alpha)
 }
 draw_text(x + 10, y - 40, "D")
-if (!j_pressed) {
-	draw_set_alpha(0.5)
-} else {
-	draw_set_alpha(prev_alpha)
-}
-draw_text(x + 40, y - 40, "J to dash")
+//if (!j_pressed) {
+//	draw_set_alpha(0.5)
+//} else {
+//	draw_set_alpha(prev_alpha)
+//}
+//draw_text(x + 40, y - 40, "J to dash")
 draw_set_alpha(prev_alpha)
