@@ -8,7 +8,10 @@ if (place_meeting(x, y, obj_spike)) {
 
 var h_move = keyboard_check(ord("D")) -  keyboard_check(ord("A"))
 var v_move = keyboard_check(ord("S")) -  keyboard_check(ord("W"))
-var grounded = place_meeting(x, y + 1, obj_wall)
+var grounded = place_meeting(x, y + 1, [obj_wall, obj_platform])
+
+// meeting under player but not already inside platform
+var on_platform = place_meeting(x, y + 1, obj_platform) and not place_meeting(x, y, obj_platform)
 
 // only add afterimages after a certain speed
 if (get_vel() > afterimage_speed) {

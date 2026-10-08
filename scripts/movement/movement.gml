@@ -17,7 +17,14 @@ function move_collide(){
 	}
 
 	for (var _y = 0; _y < abs(y_round); _y++) {
-		if (place_meeting(x, y + sign(y_vel), obj_wall)) {
+		if (place_meeting(x, y + 1, obj_platform)) { // special platform case
+			 // going up or already inside or falling
+			if (sign(y_vel) < 0 or place_meeting(x, y, obj_platform) or keyboard_check(ord("S"))) {
+				y += sign(y_vel)
+			} else {
+				y_vel = 0
+			}
+		} else if (place_meeting(x, y + sign(y_vel), obj_wall)) {
 			y_vel = 0
 		} else {
 			y += sign(y_vel)

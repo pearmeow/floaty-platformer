@@ -1,2 +1,3 @@
-var cam = view_get_camera(0)
-camera_set_view_target(cam, obj_player.id)
+cam_id = view_get_camera(0)
+cam_width = view_wport[cam_id]
+cam_height = view_hport[cam_id]
