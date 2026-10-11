@@ -25,8 +25,6 @@ normalized_dash_strength = sqrt(dash_strength * dash_strength / 2)
 
 color = c_white
 
-can_dash = false
-
 x = obj_spawn.x
 y = obj_spawn.y
 

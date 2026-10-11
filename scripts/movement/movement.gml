@@ -9,7 +9,11 @@ function move_collide(){
 	y_remain = y_total % 1
 	
 	for (var _x = 0; _x < abs(x_round); _x++) {
-		if (place_meeting(x + sign(x_vel), y, obj_wall)) {
+		if (place_meeting(x + sign(x_vel), y, obj_bouncer)) {
+			var collided = instance_place(x + sign(x_vel), y, obj_bouncer)  // don't get a random bouncer's y or x
+			var bounce_direction = sign(x - collided.x)
+			x_vel = abs(x_vel) * bounce_direction
+		} else if (place_meeting(x + sign(x_vel), y, obj_wall)) {
 			x_vel = 0
 		} else {
 			x += sign(x_vel)
@@ -17,7 +21,8 @@ function move_collide(){
 	}
 
 	for (var _y = 0; _y < abs(y_round); _y++) {
-		if (place_meeting(x, y + 1, obj_platform)) { // special platform case
+		// special platform case
+		if (place_meeting(x, y + 1, obj_platform) && not place_meeting(x, y + 1, obj_wall)) { // do not fall down into a wall
 			 // going up or already inside or falling
 			if (sign(y_vel) < 0 or place_meeting(x, y, obj_platform) or keyboard_check(ord("S"))) {
 				y += sign(y_vel)
@@ -25,7 +30,8 @@ function move_collide(){
 				y_vel = 0
 			}
 		} else if (place_meeting(x, y + sign(y_vel), obj_bouncer)) { // guess we're gonna see a lot more of these
-			var bounce_direction = sign(y - obj_bouncer.y)
+			var collided = instance_place(x, y + sign(y_vel), obj_bouncer)  // don't get a random bouncer's y or x
+			var bounce_direction = sign(y - collided.y)
 			y_vel = abs(y_vel) * bounce_direction
 		} else if (place_meeting(x, y + sign(y_vel), obj_wall)) {
 			y_vel = 0

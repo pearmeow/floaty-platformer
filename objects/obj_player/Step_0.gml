@@ -8,7 +8,7 @@ if (place_meeting(x, y, obj_hazard)) {
 
 var h_move = keyboard_check(ord("D")) -  keyboard_check(ord("A"))
 var v_move = keyboard_check(ord("S")) -  keyboard_check(ord("W"))
-var grounded = place_meeting(x, y + 1, [obj_wall, obj_platform])
+var grounded = place_meeting(x, y + 1, [obj_platform, obj_wall]) and y_vel == 0
 
 // meeting under player but not already inside platform
 var on_platform = place_meeting(x, y + 1, obj_platform) and not place_meeting(x, y, obj_platform)
@@ -42,7 +42,7 @@ if (dash_timer == dash_duration) {
 
 if (not dash) {
 	color = c_white
-} else if (can_dash) {
+} else if (global.can_dash) {
 	color = c_aqua
 }
 
@@ -50,7 +50,16 @@ if (dashing) {
 	color = c_orange
 	dash_timer += 1
 } else {
-	x_vel = clamp(x_vel + h_move * x_accel, -max_x_vel, max_x_vel)
+	
+	if (abs(x_vel) <= max_x_vel or grounded) {
+		// clamp speed when you're on the ground
+		x_vel = clamp(x_vel + h_move * x_accel, -max_x_vel, max_x_vel)
+	} else {
+		// if you're past the max speed, a and d only decelerate
+		if (abs(x_vel + h_move * x_accel) < abs(x_vel)) {
+			x_vel = x_vel + h_move * x_accel
+		}
+	}
 	y_vel += grav
 	if (v_move == 1) { // fast falling
 		y_vel += 4 * grav
@@ -62,7 +71,7 @@ if (grounded and keyboard_check_pressed(vk_space)) {
 	create_particle(x, y + 8, 5)
 }
 
-if (can_dash and dash and (keyboard_check_pressed(ord("J")))) {
+if (global.can_dash and dash and (keyboard_check_pressed(ord("J")))) {
 	// normalize speed
 	var directions = abs(h_move) + abs(v_move)
 	if (directions == 2) {

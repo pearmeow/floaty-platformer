@@ -1,1 +1,1 @@
-// probably add level change stuff here
+global.can_dash = false
