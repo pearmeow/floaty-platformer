@@ -6,7 +6,7 @@ if (place_meeting(x, y, obj_player)) {
 
 y += dsin(timer) / 4
 
-timer++;
+timer++
 
 if (timer == 360) {
 	timer = 1
