@@ -9,8 +9,8 @@
   "name":"obj_saw",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects",
-    "path":"folders/objects.yy",
+    "name":"hazards",
+    "path":"folders/objects/hazards.yy",
   },
   "parentObjectId":{
     "name":"obj_hazard",

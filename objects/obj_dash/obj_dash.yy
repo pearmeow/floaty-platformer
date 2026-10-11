@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_spike",
+  "%Name":"obj_dash",
   "eventList":[],
   "managed":true,
-  "name":"obj_spike",
+  "name":"obj_dash",
   "overriddenProperties":[],
   "parent":{
-    "name":"hazards",
-    "path":"folders/objects/hazards.yy",
+    "name":"pickups",
+    "path":"folders/objects/pickups.yy",
   },
-  "parentObjectId":{
-    "name":"obj_hazard",
-    "path":"objects/obj_hazard/obj_hazard.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_spike",
-    "path":"sprites/spr_spike/spr_spike.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
