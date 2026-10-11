@@ -33,6 +33,9 @@ function move_collide(){
 			var collided = instance_place(x, y + sign(y_vel), obj_bouncer)  // don't get a random bouncer's y or x
 			var bounce_direction = sign(y - collided.y)
 			y_vel = abs(y_vel) * bounce_direction
+			if (abs(y_vel) < 1 and sign(y_vel) == -1) { // don't bounce tiny amounts on the ground
+				y_vel = 0
+			}
 		} else if (place_meeting(x, y + sign(y_vel), obj_wall)) {
 			y_vel = 0
 		} else {
