@@ -24,6 +24,9 @@ function move_collide(){
 			} else {
 				y_vel = 0
 			}
+		} else if (place_meeting(x, y + sign(y_vel), obj_bouncer)) { // guess we're gonna see a lot more of these
+			var bounce_direction = sign(y - obj_bouncer.y)
+			y_vel = abs(y_vel) * bounce_direction
 		} else if (place_meeting(x, y + sign(y_vel), obj_wall)) {
 			y_vel = 0
 		} else {

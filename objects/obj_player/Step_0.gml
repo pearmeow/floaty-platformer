@@ -2,7 +2,7 @@ if (y > room_height + 30 or y < -30 or x < -30 or x > room_width + 30) { // out 
 	die()
 }
 
-if (place_meeting(x, y, obj_spike)) {
+if (place_meeting(x, y, obj_hazard)) {
 	die()
 }
 

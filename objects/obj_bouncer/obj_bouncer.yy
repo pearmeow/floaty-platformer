@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_spike",
+  "%Name":"obj_bouncer",
   "eventList":[],
   "managed":true,
-  "name":"obj_spike",
+  "name":"obj_bouncer",
   "overriddenProperties":[],
   "parent":{
     "name":"objects",
     "path":"folders/objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_hazard",
-    "path":"objects/obj_hazard/obj_hazard.yy",
+    "name":"obj_wall",
+    "path":"objects/obj_wall/obj_wall.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_spike",
-    "path":"sprites/spr_spike/spr_spike.yy",
+    "name":"spr_bouncer",
+    "path":"sprites/spr_bouncer/spr_bouncer.yy",
   },
   "spriteMaskId":null,
   "visible":true,
