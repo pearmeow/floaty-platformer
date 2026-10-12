@@ -7,7 +7,7 @@ if (not active) {
 	return
 }
 
-if (place_meeting(x, y, obj_player)) {
+if (place_meeting(x, y, obj_player) and obj_player.dash == false) {
 	active = false
 	obj_player.dash = true
 }
