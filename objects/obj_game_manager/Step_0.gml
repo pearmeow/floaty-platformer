@@ -1,9 +1,13 @@
-
-
-if (keyboard_check_pressed(vk_right)) {
+if (keyboard_check_pressed(vk_right) and room_exists(room_next(room))) {
 	room_goto_next()
+	if (room_next(room) == rm_3) {
+		global.can_dash = true
+	}
 }
 
-if (keyboard_check_pressed(vk_left)) {
+if (keyboard_check_pressed(vk_left) and room_exists(room_previous(room))) {
 	room_goto_previous()
+	if (room_next(room) == rm_2) {
+		global.can_dash = false
+	}
 }
