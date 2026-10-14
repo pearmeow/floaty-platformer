@@ -7,7 +7,7 @@ if (keyboard_check_pressed(vk_right) and room_exists(room_next(room))) {
 
 if (keyboard_check_pressed(vk_left) and room_exists(room_previous(room))) {
 	room_goto_previous()
-	if (room_previous(room) == rm_2) {
+	if (room_previous(room) == rm_2 or room_previous(room) == rm_1) {
 		global.can_dash = false
 	} else if (room_previous(room) == rm_0) {
 		global.timer = 0
