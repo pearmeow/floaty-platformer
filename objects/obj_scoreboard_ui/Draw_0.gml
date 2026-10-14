@@ -1,0 +1,5 @@
+var prev_alignment = draw_get_halign()
+draw_set_halign(fa_center)
+draw_text(room_width / 2, room_height / 2, "Time to clear: " + string(global.timer))
+draw_text(room_width / 2, room_height / 2 + 20, "Deaths: " + string(global.deaths))
+draw_set_halign(prev_alignment)

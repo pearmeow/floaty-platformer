@@ -1,0 +1,1 @@
+draw_text(x, y, "Arrow keys to go through levels")

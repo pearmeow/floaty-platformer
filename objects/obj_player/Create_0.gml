@@ -33,6 +33,7 @@ function get_vel() {
 }
 
 function die() {
+	global.deaths += 1
 	x = obj_spawn.x
 	y = obj_spawn.y
 	x_vel = 0
