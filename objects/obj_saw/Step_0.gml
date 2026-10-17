@@ -1,11 +1,5 @@
-time++
-
-if (x_vel == 0) {
+if (place_meeting(x, y, obj_wall)) {
 	x_direction *= -1
 }
 
-if (sign(x_vel) != sign(x_direction)) {
-	x_vel = x_direction * max_x_vel
-}
-
-move_collide()
+x += x_vel * x_direction

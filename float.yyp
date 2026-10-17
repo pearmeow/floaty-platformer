@@ -33,6 +33,7 @@
     {"id":{"name":"obj_camera_control","path":"objects/obj_camera_control/obj_camera_control.yy",},},
     {"id":{"name":"obj_checkpoint","path":"objects/obj_checkpoint/obj_checkpoint.yy",},},
     {"id":{"name":"obj_controls_ui","path":"objects/obj_controls_ui/obj_controls_ui.yy",},},
+    {"id":{"name":"obj_dash_grav_ui","path":"objects/obj_dash_grav_ui/obj_dash_grav_ui.yy",},},
     {"id":{"name":"obj_dash_jump_ui","path":"objects/obj_dash_jump_ui/obj_dash_jump_ui.yy",},},
     {"id":{"name":"obj_dash_refresh","path":"objects/obj_dash_refresh/obj_dash_refresh.yy",},},
     {"id":{"name":"obj_dash_ui","path":"objects/obj_dash_ui/obj_dash_ui.yy",},},
