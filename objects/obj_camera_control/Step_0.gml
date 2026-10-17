@@ -1,7 +1,5 @@
 // center camera on player
 // clamp x to the edges of the room and y to the height of the room
-
-
 if (looking_up) {
 	camera_change = approach(camera_change, -cam_height, 20)
 }
