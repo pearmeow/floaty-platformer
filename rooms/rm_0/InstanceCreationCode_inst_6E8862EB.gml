@@ -1,0 +1,1 @@
+text = "Timing and gravity manipulation are key"

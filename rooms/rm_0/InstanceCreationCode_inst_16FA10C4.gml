@@ -1,0 +1,1 @@
+text = "Press S to fall down platforms"
