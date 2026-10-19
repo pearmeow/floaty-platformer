@@ -13,6 +13,7 @@ function move_collide(){
 			var collided = instance_place(x + sign(x_vel), y, obj_bouncer)  // don't get a random bouncer's y or x
 			var bounce_direction = sign(x - collided.x)
 			x_vel = abs(x_vel) * bounce_direction
+			dash = true
 		} else if (place_meeting(x + sign(x_vel), y, obj_wall)) {
 			x_vel = 0
 		} else {
@@ -32,6 +33,7 @@ function move_collide(){
 		} else if (place_meeting(x, y + sign(y_vel), obj_bouncer)) { // guess we're gonna see a lot more of these
 			var collided = instance_place(x, y + sign(y_vel), obj_bouncer)  // don't get a random bouncer's y or x
 			var bounce_direction = sign(y - collided.y)
+			dash = true
 			y_vel = abs(y_vel) * bounce_direction
 			if (abs(y_vel) < 1 and sign(y_vel) == -1) { // don't bounce tiny amounts on the ground
 				y_vel = 0
