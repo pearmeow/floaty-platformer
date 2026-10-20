@@ -6,8 +6,8 @@
   "name":"obj_bouncer",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects",
-    "path":"folders/objects.yy",
+    "name":"blocks",
+    "path":"folders/objects/blocks.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",
