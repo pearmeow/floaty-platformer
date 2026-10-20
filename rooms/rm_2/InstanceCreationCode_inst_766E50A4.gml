@@ -1,0 +1,1 @@
+text = "Hold W to look up"

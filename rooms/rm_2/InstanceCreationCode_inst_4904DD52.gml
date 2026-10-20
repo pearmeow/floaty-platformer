@@ -1,0 +1,1 @@
+text = "Touching the blue pickup refreshes your dash"

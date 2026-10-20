@@ -1,0 +1,1 @@
+text = "Dashes can be cancelled into other dashes"

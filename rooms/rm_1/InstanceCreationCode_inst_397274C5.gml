@@ -1,0 +1,1 @@
+text = "Press S while going up to reduce bounce"

@@ -1,0 +1,1 @@
+text = "Dashing horizontally temporarily ignores gravity"
