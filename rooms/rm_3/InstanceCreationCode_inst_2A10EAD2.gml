@@ -1,1 +1,0 @@
-text = "Hold S to look down (while not on a platform)"

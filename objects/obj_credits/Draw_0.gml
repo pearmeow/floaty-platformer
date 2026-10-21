@@ -1,0 +1,8 @@
+var align = draw_get_halign()
+draw_set_halign(fa_center)
+draw_set_font(global.big_font)
+draw_text(x, y, "Credits:")
+draw_text(x, y, "Font: https://mjtype.com/product/smile-moon/")
+draw_text(x, y, "Everything else: me")
+draw_set_font(global.font)
+draw_set_halign(align)

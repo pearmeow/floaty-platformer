@@ -1,1 +1,0 @@
-text = "Dashing into a wall stops you temporarily"

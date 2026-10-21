@@ -1,0 +1,6 @@
+var align = draw_get_halign()
+draw_set_halign(fa_center)
+draw_set_font(global.big_font)
+draw_text(x, y, "Fast faller")
+draw_set_font(global.font)
+draw_set_halign(align)

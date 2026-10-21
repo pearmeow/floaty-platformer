@@ -1,1 +1,1 @@
-text = "Hold S in the air to increase gravity"
+text = "Hold S to increase gravity"

@@ -1,1 +1,1 @@
-text = "WASD to move. Space to jump"
+text = "WASD to move. Space to jump."

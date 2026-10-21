@@ -1,0 +1,1 @@
+text = "Dash only works while one or two directions (WASD) are pressed"
